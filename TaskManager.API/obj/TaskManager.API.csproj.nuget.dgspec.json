@@ -1,0 +1,454 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.API/TaskManager.API.csproj": {}
+  },
+  "projects": {
+    "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.API/TaskManager.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.API/TaskManager.API.csproj",
+        "projectName": "TaskManager.API",
+        "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.API/TaskManager.API.csproj",
+        "packagesPath": "/Users/andreypominov/.nuget/packages/",
+        "outputPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/andreypominov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/TaskManager.Application.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/TaskManager.Application.csproj"
+              },
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/TaskManager.GraphQL.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/TaskManager.GraphQL.csproj"
+              },
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "HotChocolate.AspNetCore": {
+              "target": "Package",
+              "version": "[15.1.6, )"
+            },
+            "HotChocolate.Data": {
+              "target": "Package",
+              "version": "[15.1.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/TaskManager.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/TaskManager.Application.csproj",
+        "projectName": "TaskManager.Application",
+        "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/TaskManager.Application.csproj",
+        "packagesPath": "/Users/andreypominov/.nuget/packages/",
+        "outputPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/andreypominov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj"
+              },
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/TaskManager.Shared.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/TaskManager.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj",
+        "projectName": "TaskManager.Domain",
+        "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj",
+        "packagesPath": "/Users/andreypominov/.nuget/packages/",
+        "outputPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/andreypominov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/TaskManager.GraphQL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/TaskManager.GraphQL.csproj",
+        "projectName": "TaskManager.GraphQL",
+        "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/TaskManager.GraphQL.csproj",
+        "packagesPath": "/Users/andreypominov/.nuget/packages/",
+        "outputPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/andreypominov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/TaskManager.Application.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/TaskManager.Application.csproj"
+              },
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj"
+              },
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/TaskManager.Shared.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/TaskManager.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "HotChocolate.AspNetCore": {
+              "target": "Package",
+              "version": "[15.1.6, )"
+            },
+            "HotChocolate.Data": {
+              "target": "Package",
+              "version": "[15.1.6, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.12.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
+        "projectName": "TaskManager.Infrastructure",
+        "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj",
+        "packagesPath": "/Users/andreypominov/.nuget/packages/",
+        "outputPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/andreypominov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/TaskManager.Application.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/TaskManager.Application.csproj"
+              },
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj"
+              },
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/TaskManager.Shared.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/TaskManager.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[9.0.6, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.12.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/TaskManager.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/TaskManager.Shared.csproj",
+        "projectName": "TaskManager.Shared",
+        "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/TaskManager.Shared.csproj",
+        "packagesPath": "/Users/andreypominov/.nuget/packages/",
+        "outputPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/andreypominov/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

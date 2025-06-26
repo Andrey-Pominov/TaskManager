@@ -1,0 +1,17 @@
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/bin/Debug/net8.0/TaskManager.Application.deps.json
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/bin/Debug/net8.0/TaskManager.Application.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/bin/Debug/net8.0/TaskManager.Application.pdb
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/bin/Debug/net8.0/TaskManager.Domain.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/bin/Debug/net8.0/TaskManager.Shared.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/bin/Debug/net8.0/TaskManager.Domain.pdb
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/bin/Debug/net8.0/TaskManager.Shared.pdb
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskManager.Application.csproj.AssemblyReference.cache
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskManager.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskManager.Application.AssemblyInfoInputs.cache
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskManager.Application.AssemblyInfo.cs
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskManager.Application.csproj.CoreCompileInputs.cache
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskMana.898BD9DB.Up2Date
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskManager.Application.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/refint/TaskManager.Application.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskManager.Application.pdb
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/ref/TaskManager.Application.dll

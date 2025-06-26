@@ -1,0 +1,11 @@
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/bin/Debug/net8.0/TaskManager.Domain.deps.json
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/bin/Debug/net8.0/TaskManager.Domain.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/bin/Debug/net8.0/TaskManager.Domain.pdb
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.AssemblyInfoInputs.cache
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.AssemblyInfo.cs
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.csproj.CoreCompileInputs.cache
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/obj/Debug/net8.0/refint/TaskManager.Domain.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/obj/Debug/net8.0/TaskManager.Domain.pdb
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/obj/Debug/net8.0/ref/TaskManager.Domain.dll
