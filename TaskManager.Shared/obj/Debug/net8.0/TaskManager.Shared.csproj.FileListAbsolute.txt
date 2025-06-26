@@ -9,3 +9,4 @@
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/obj/Debug/net8.0/refint/TaskManager.Shared.dll
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/obj/Debug/net8.0/TaskManager.Shared.pdb
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/obj/Debug/net8.0/ref/TaskManager.Shared.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Shared/obj/Debug/net8.0/TaskManager.Shared.sourcelink.json

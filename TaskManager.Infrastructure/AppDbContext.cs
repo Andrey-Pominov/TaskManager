@@ -6,13 +6,29 @@ namespace TaskManager.Infrastructure;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
-    public DbSet<User> Users => Set<User>();
-    public DbSet<Task> Tasks => Set<Task>();
+    public DbSet<Task> Tasks { get; set; }
+    public DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Task>()
+            .HasOne(t => t.AssignedTo)
+            .WithMany(u => u.AssignedTasks)
+            .HasForeignKey(t => t.AssignedToId)
+            .IsRequired(false); 
 
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+        modelBuilder.Entity<Task>()
+            .HasOne(t => t.CreatedBy)
+            .WithMany(u => u.CreatedTasks)
+            .HasForeignKey(t => t.CreatedById)
+            .IsRequired(true); 
+        
+        modelBuilder.Entity<User>()
+            .HasIndex(u => u.Email)
+            .IsUnique();
+
+        modelBuilder.Entity<User>()
+            .HasIndex(u => u.Username)
+            .IsUnique();
     }
 }
