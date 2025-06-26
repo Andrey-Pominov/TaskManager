@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TaskManager.Domain.Entities;
 
-
 public class User
 {
     public Guid Id { get; set; }
