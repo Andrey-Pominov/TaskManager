@@ -17,3 +17,4 @@
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/obj/Debug/net8.0/refint/TaskManager.GraphQL.dll
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/obj/Debug/net8.0/TaskManager.GraphQL.pdb
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/obj/Debug/net8.0/ref/TaskManager.GraphQL.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.GraphQL/obj/Debug/net8.0/TaskManager.GraphQL.sourcelink.json

@@ -1,7 +1,5 @@
 ﻿using HotChocolate.Types.Pagination;
 using Microsoft.Extensions.DependencyInjection;
-// using TaskManager.GraphQL.Queries;
-// using TaskManager.GraphQL.Mutations;
 
 namespace TaskManager.GraphQL;
 

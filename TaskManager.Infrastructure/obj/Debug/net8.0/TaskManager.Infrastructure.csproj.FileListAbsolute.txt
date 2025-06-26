@@ -19,3 +19,4 @@
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/obj/Debug/net8.0/TaskManager.Infrastructure.pdb
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/obj/Debug/net8.0/TaskManager.Infrastructure.genruntimeconfig.cache
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/obj/Debug/net8.0/ref/TaskManager.Infrastructure.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Infrastructure/obj/Debug/net8.0/TaskManager.Infrastructure.sourcelink.json

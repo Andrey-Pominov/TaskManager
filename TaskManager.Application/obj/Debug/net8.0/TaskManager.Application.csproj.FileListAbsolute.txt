@@ -15,3 +15,4 @@
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/refint/TaskManager.Application.dll
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskManager.Application.pdb
 /Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/ref/TaskManager.Application.dll
+/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Application/obj/Debug/net8.0/TaskManager.Application.sourcelink.json

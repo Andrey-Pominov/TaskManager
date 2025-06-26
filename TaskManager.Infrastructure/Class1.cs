@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-// using TaskManager.Infrastructure.Persistence;
-// using TaskManager.Infrastructure.Auth;
-// using TaskManager.Application.Common.Interfaces;
 
 namespace TaskManager.Infrastructure;
 
