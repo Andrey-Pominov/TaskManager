@@ -1,15 +1,10 @@
 using System.Text;
-using HotChocolate.Data.Filters;
-using HotChocolate.Types.Descriptors;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using TaskManager.Application;
 using TaskManager.GraphQL;
-using TaskManager.GraphQL.Types;
 using TaskManager.Infrastructure;
-using TaskManager.Shared.Common;
 using TaskManager.Shared.Configuration;
-using Task = TaskManager.Domain.Entities.Task;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,14 +41,6 @@ builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddGraphQLServices();
 
-builder.Services
-    .AddGraphQLServer()
-    .AddAuthorization()
-    .AddHttpRequestInterceptor<CustomRequestInterceptor>()
-    .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true)
-    .AddProjections()
-    .AddDirectiveType<SkipDirectiveType>() // Explicitly register SkipDirectiveType
-    .AddDirectiveType<IncludeDirectiveType>(); // Register IncludeDirectiveType for completeness
 
 var app = builder.Build();
 

@@ -28,8 +28,7 @@ public class TaskType : ObjectType<Task>
 
         descriptor
             .Field(t => t.CreatedBy)
-            .Type<UserType>()
-            .Authorize("Admin");
+            .Type<UserType>();
 
         descriptor
             .Field(t => t.AssignedTo)

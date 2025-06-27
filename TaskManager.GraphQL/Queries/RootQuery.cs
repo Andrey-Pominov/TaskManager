@@ -5,7 +5,7 @@ using UserTask = TaskManager.Domain.Entities.Task;
 
 namespace TaskManager.GraphQL.Queries;
 
-public class Query
+public class RootQuery
 {
     [Authorize]
     [UsePaging]
