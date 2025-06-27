@@ -1,4 +1,5 @@
 using HotChocolate.Authorization;
+using Microsoft.Extensions.Logging;
 using TaskManager.Application.Interface;
 using TaskManager.Domain.Entities;
 using UserTask = TaskManager.Domain.Entities.Task;
@@ -8,6 +9,13 @@ namespace TaskManager.GraphQL.Mutations;
 [ExtendObjectType(typeof(RootMutation))]
 public class TaskMutation
 {
+    private readonly ILogger<TaskMutation> _logger;
+    
+    public TaskMutation(ILogger<TaskMutation> logger)
+    {
+        _logger = logger;
+    }
+
     [Authorize]
     public async Task<UserTask> CreateTask(
         [Service] ITaskService taskService,
@@ -16,12 +24,28 @@ public class TaskMutation
         string description,
         Status status)
     {
-        var result = await taskService.AddTaskAsync(userId, title, description, status);
-        if (!result.IsSuccess)
+        _logger.LogInformation("Creating task for userId: {UserId}, title: {Title}, status: {Status}", 
+            userId, title, status);
+        try
         {
-            throw new GraphQLException(result.Error);
+            var result = await taskService.AddTaskAsync(userId, title, description, status);
+            if (!result.IsSuccess)
+            {
+                _logger.LogWarning("Task creation failed for userId: {UserId}, title: {Title}. Error: {Error}", 
+                    userId, title, result.Error);
+                throw new GraphQLException(result.Error);
+            }
+
+            _logger.LogInformation("Task created successfully for userId: {UserId}, taskId: {TaskId}", 
+                userId, result.Value.Id);
+            return result.Value;
         }
-        return result.Value;
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Unexpected error during task creation for userId: {UserId}, title: {Title}", 
+                userId, title);
+            throw;
+        }
     }
 
     [Authorize]
@@ -33,12 +57,28 @@ public class TaskMutation
         string description,
         Status status)
     {
-        var result = await taskService.UpdateAsync(userId, taskId, title, description, status);
-        if (!result.IsSuccess)
+        _logger.LogInformation("Updating task for userId: {UserId}, taskId: {TaskId}, title: {Title}, status: {Status}", 
+            userId, taskId, title, status);
+        try
         {
-            throw new GraphQLException(result.Error);
+            var result = await taskService.UpdateAsync(userId, taskId, title, description, status);
+            if (!result.IsSuccess)
+            {
+                _logger.LogWarning("Task update failed for userId: {UserId}, taskId: {TaskId}. Error: {Error}", 
+                    userId, taskId, result.Error);
+                throw new GraphQLException(result.Error);
+            }
+
+            _logger.LogInformation("Task updated successfully for userId: {UserId}, taskId: {TaskId}", 
+                userId, taskId);
+            return result.Value;
         }
-        return result.Value;
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Unexpected error during task update for userId: {UserId}, taskId: {TaskId}", 
+                userId, taskId);
+            throw;
+        }
     }
 
     [Authorize(Roles = new[] { "Admin" })]
@@ -47,12 +87,27 @@ public class TaskMutation
         [GlobalState("userId")] Guid userId,
         Guid taskId)
     {
-        var result = await taskService.DeleteAsync(userId, taskId);
-        if (!result.IsSuccess)
+        _logger.LogInformation("Deleting task for userId: {UserId}, taskId: {TaskId}", userId, taskId);
+        try
         {
-            throw new GraphQLException(result.Error);
+            var result = await taskService.DeleteAsync(userId, taskId);
+            if (!result.IsSuccess)
+            {
+                _logger.LogWarning("Task deletion failed for userId: {UserId}, taskId: {TaskId}. Error: {Error}", 
+                    userId, taskId, result.Error);
+                throw new GraphQLException(result.Error);
+            }
+
+            _logger.LogInformation("Task deleted successfully for userId: {UserId}, taskId: {TaskId}", 
+                userId, taskId);
+            return true;
         }
-        return true;
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Unexpected error during task deletion for userId: {UserId}, taskId: {TaskId}", 
+                userId, taskId);
+            throw;
+        }
     }
 
     [Authorize(Roles = new[] { "Admin" })]
@@ -61,11 +116,26 @@ public class TaskMutation
         Guid taskId,
         Guid assignUserId)
     {
-        var result =  await taskService.AssignTaskToUserAsync(taskId, assignUserId);
-        if (!result.IsSuccess)
+        _logger.LogInformation("Assigning task taskId: {TaskId} to userId: {AssignUserId}", taskId, assignUserId);
+        try
         {
-            throw new GraphQLException(result.Error);
+            var result = await taskService.AssignTaskToUserAsync(taskId, assignUserId);
+            if (!result.IsSuccess)
+            {
+                _logger.LogWarning("Task assignment failed for taskId: {TaskId}, assignUserId: {AssignUserId}. Error: {Error}", 
+                    taskId, assignUserId, result.Error);
+                throw new GraphQLException(result.Error);
+            }
+
+            _logger.LogInformation("Task assigned successfully for taskId: {TaskId}, assignUserId: {AssignUserId}", 
+                taskId, assignUserId);
+            return result.Value;
         }
-        return result.Value;
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Unexpected error during task assignment for taskId: {TaskId}, assignUserId: {AssignUserId}", 
+                taskId, assignUserId);
+            throw;
+        }
     }
 }
