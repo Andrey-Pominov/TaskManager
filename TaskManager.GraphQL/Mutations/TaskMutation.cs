@@ -56,26 +56,17 @@ public class TaskMutation
         return true;
     }
 
-    [Authorize(Roles = new[] { "ADMIN" })]
-    public async Task<AssignTaskPayload> AssignTaskToUser(
+    [Authorize(Roles = new[] { "Admin" })]
+    public async Task<UserTask> AssignTaskToUser(
         [Service] ITaskService taskService,
         Guid taskId,
         Guid assignUserId)
     {
-        var result = await taskService.AssignTaskToUserAsync(taskId, assignUserId);
-
+        var result =  await taskService.AssignTaskToUserAsync(taskId, assignUserId);
         if (!result.IsSuccess)
         {
-            return new AssignTaskPayload
-            {
-                Error = result.Error
-            };
+            throw new GraphQLException(result.Error);
         }
-
-        return new AssignTaskPayload
-        {
-            Task = result.Value
-        };
+        return result.Value;
     }
-
 }

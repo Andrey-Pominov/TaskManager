@@ -47,8 +47,8 @@ public class TaskService : ITaskService
             CreatedBy = user
         };
 
-        await _taskRepository.AddAsync(newTask);
-        return Result<UserTask>.Success(newTask);
+        var task = await _taskRepository.AddAsync(newTask);
+        return Result<UserTask>.Success(task);
     }
 
     public async Task<Result<UserTask>> UpdateAsync(Guid userId, Guid taskId, string title, string description,
@@ -74,8 +74,8 @@ public class TaskService : ITaskService
         task.Title = title;
         task.Description = description;
         task.Status = status;
-        await _taskRepository.UpdateAsync(task);
-        return Result<UserTask>.Success(task);
+        var updateTask = await _taskRepository.UpdateAsync(task);
+        return Result<UserTask>.Success(updateTask);
     }
 
     public async Task<Result> DeleteAsync(Guid userId, Guid taskId)
@@ -117,7 +117,7 @@ public class TaskService : ITaskService
 
         task.AssignedToId = userId;
         task.AssignedTo = user;
-        await _taskRepository.UpdateAsync(task);
-        return Result<UserTask>.Success(task);
+        var updateTask = await _taskRepository.UpdateAsync(task);
+        return Result<UserTask>.Success(updateTask);
     }
 }

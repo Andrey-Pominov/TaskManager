@@ -20,8 +20,7 @@ public class TaskRepository : ITaskRepository
 
     public IQueryable<UserTask> GetAllAsync()
     {
-             return _context.Tasks
-            .Include(t => t.CreatedBy);
+        return _context.Tasks.AsQueryable();
     }
 
     public async Task<UserTask> AddAsync(UserTask task)
@@ -33,7 +32,7 @@ public class TaskRepository : ITaskRepository
 
     public async Task<UserTask> UpdateAsync(UserTask task)
     {
-        var updateTask = _context.Tasks.Update(task);
+        var updateTask =  _context.Tasks.Update(task);
         await _context.SaveChangesAsync();
         return updateTask.Entity;
     }

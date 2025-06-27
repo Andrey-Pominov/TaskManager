@@ -12,8 +12,8 @@ public class UserType : ObjectType<User>
 
         descriptor
             .Field(u => u.Username)
-            .UseFiltering()
-            .Type<NonNullType<StringType>>();
+            .Type<NonNullType<StringType>>()
+            .UseFiltering();
 
         descriptor
             .Field(u => u.Email)

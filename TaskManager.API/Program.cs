@@ -1,4 +1,5 @@
 using System.Text;
+using HotChocolate.Data.Filters;
 using HotChocolate.Types.Descriptors;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -8,6 +9,7 @@ using TaskManager.GraphQL.Types;
 using TaskManager.Infrastructure;
 using TaskManager.Shared.Common;
 using TaskManager.Shared.Configuration;
+using Task = TaskManager.Domain.Entities.Task;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +35,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy =>
+        policy.RequireRole("Admin"));
+});
 
 // Регистрация сервисов
 builder.Services.AddApplication();
@@ -46,10 +52,6 @@ builder.Services
     .AddHttpRequestInterceptor<CustomRequestInterceptor>()
     .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true)
     .AddProjections()
-    .AddFiltering()
-    .AddSorting()
-    .AddType<TaskType>() 
-    .AddType<UserType>()
     .AddDirectiveType<SkipDirectiveType>() // Explicitly register SkipDirectiveType
     .AddDirectiveType<IncludeDirectiveType>(); // Register IncludeDirectiveType for completeness
 

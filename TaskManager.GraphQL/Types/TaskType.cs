@@ -20,9 +20,7 @@ public class TaskType : ObjectType<Task>
 
         descriptor
             .Field(t => t.Status)
-            .Resolve(ctx => ctx.Parent<Task>().Status.ToString())
-            .Type<NonNullType<StringType>>()
-            .UseFiltering();
+            .Type<NonNullType<StringType>>();
 
         descriptor
             .Field(t => t.CreatedAt)
@@ -31,6 +29,11 @@ public class TaskType : ObjectType<Task>
         descriptor
             .Field(t => t.CreatedBy)
             .Type<UserType>()
-            .Authorize("Admin"); 
+            .Authorize("Admin");
+
+        descriptor
+            .Field(t => t.AssignedTo)
+            .Type<UserType>();
     }
+
 }
