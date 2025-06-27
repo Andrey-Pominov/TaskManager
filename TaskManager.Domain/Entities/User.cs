@@ -16,7 +16,7 @@ public class User
     public string PasswordHash { get; set; } = string.Empty;
     [MaxLength(50)]
     [Required]
-    public Role Role { get; set; } = Role.USER;
+    public Role Role { get; set; } = Role.User;
 
     public ICollection<Task> CreatedTasks { get; set; } = new List<Task>();
     public ICollection<Task> AssignedTasks { get; set; } = new List<Task>();

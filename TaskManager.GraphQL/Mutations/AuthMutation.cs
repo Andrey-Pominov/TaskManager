@@ -1,10 +1,11 @@
 using HotChocolate.Authorization;
+using TaskManager.Application.Interface;
 using TaskManager.Domain.Entities;
-using TaskManager.Infrastructure.Interfaces;
 
 namespace TaskManager.GraphQL.Mutations;
 
-public class Mutation
+[ExtendObjectType(typeof(RootMutation))]
+public class AuthMutation
 {
     public async Task<string> Login([Service] IAuthService authService, string username, string password)
     {
@@ -18,7 +19,7 @@ public class Mutation
     }
 
     public async Task<User> Register([Service] IAuthService authService, string username, string email, string password,
-        Role role = Role.USER)
+        Role role = Role.User)
     {
         var result = await authService.RegisterAsync(username, email, password, role);
         if (!result.IsSuccess)

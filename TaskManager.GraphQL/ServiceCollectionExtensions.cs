@@ -10,7 +10,9 @@ public static class ServiceCollectionExtensions
         services
             .AddGraphQLServer()
             .AddQueryType<Query>()
-            .AddMutationType<Mutation>();
+            .AddMutationType<RootMutation>() 
+            .AddType<AuthMutation>() 
+            .AddType<TaskMutation>();
         return services;
     }
 }

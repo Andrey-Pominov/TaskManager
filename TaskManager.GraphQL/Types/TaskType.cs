@@ -2,13 +2,13 @@ using Task = TaskManager.Domain.Entities.Task;
 
 namespace TaskManager.GraphQL.Types;
 
-public class TaskType :  ObjectType<Task>
+public class TaskType : ObjectType<Task>
 {
     protected override void Configure(IObjectTypeDescriptor<Task> descriptor)
     {
         descriptor
             .Field(t => t.Id)
-            .Type<NonNullType>();
+            .Type<NonNullType<IdType>>(); 
 
         descriptor
             .Field(t => t.Title)
@@ -20,7 +20,9 @@ public class TaskType :  ObjectType<Task>
 
         descriptor
             .Field(t => t.Status)
-            .Type<NonNullType<StringType>>();
+            .Resolve(ctx => ctx.Parent<Task>().Status.ToString())
+            .Type<NonNullType<StringType>>()
+            .UseFiltering();
 
         descriptor
             .Field(t => t.CreatedAt)

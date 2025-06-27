@@ -17,6 +17,7 @@ public static class ServiceCollectionExtensions
         
         services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<ITaskRepository, TaskRepository>();
         var jwtSettings = config.GetSection("JwtSettings").Get<JwtSettings>();
         services.AddSingleton(jwtSettings);
 

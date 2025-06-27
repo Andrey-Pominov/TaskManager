@@ -12,6 +12,7 @@ public class UserType : ObjectType<User>
 
         descriptor
             .Field(u => u.Username)
+            .UseFiltering()
             .Type<NonNullType<StringType>>();
 
         descriptor
@@ -24,11 +25,11 @@ public class UserType : ObjectType<User>
 
         descriptor
             .Field(u => u.PasswordHash)
-            .Ignore(); // Скрываем пароль
+            .Ignore();
 
         descriptor
             .Field(u => u.AssignedTasks)
             .Type<ListType<TaskType>>()
-            .Authorize("Admin"); // Только админы видят задачи пользователя
+            .Authorize("Admin");
     }
 }

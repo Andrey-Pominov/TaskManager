@@ -1,3 +1,4 @@
+using TaskManager.Application.Interface;
 using TaskManager.Domain.Entities;
 using TaskManager.Infrastructure.Interfaces;
 using TaskManager.Shared.Common;
@@ -28,7 +29,7 @@ public class AuthService : IAuthService
         return Result<string>.Success(token);
     }
 
-    public async Task<Result<User>> RegisterAsync(string username, string email, string password, Role role = Role.USER)
+    public async Task<Result<User>> RegisterAsync(string username, string email, string password, Role role)
     {
         if (await _userRepository.ExistsByUsernameOrEmailAsync(username, email))
         {

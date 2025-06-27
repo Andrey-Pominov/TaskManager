@@ -1,4 +1,5 @@
 using System.Text;
+using HotChocolate.Types.Descriptors;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using TaskManager.Application;
@@ -44,8 +45,13 @@ builder.Services
     .AddAuthorization()
     .AddHttpRequestInterceptor<CustomRequestInterceptor>()
     .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true)
-    .AddType<TaskType>() // Из TaskManager.GraphQL
-    .AddType<UserType>(); // Из TaskManager.GraphQL
+    .AddProjections()
+    .AddFiltering()
+    .AddSorting()
+    .AddType<TaskType>() 
+    .AddType<UserType>()
+    .AddDirectiveType<SkipDirectiveType>() // Explicitly register SkipDirectiveType
+    .AddDirectiveType<IncludeDirectiveType>(); // Register IncludeDirectiveType for completeness
 
 var app = builder.Build();
 
