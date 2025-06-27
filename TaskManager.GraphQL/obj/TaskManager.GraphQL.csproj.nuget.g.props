@@ -13,7 +13,8 @@
     <SourceRoot Include="/Users/andreypominov/.nuget/packages/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)hotchocolate.data/15.1.6/build/HotChocolate.Data.props" Condition="Exists('$(NuGetPackageRoot)hotchocolate.data/15.1.6/build/HotChocolate.Data.props')" />
-    <Import Project="$(NuGetPackageRoot)hotchocolate.aspnetcore/15.1.6/build/HotChocolate.AspNetCore.props" Condition="Exists('$(NuGetPackageRoot)hotchocolate.aspnetcore/15.1.6/build/HotChocolate.AspNetCore.props')" />
+    <Import Project="$(NuGetPackageRoot)hotchocolate.aspnetcore/13.9.0/build/HotChocolate.AspNetCore.props" Condition="Exists('$(NuGetPackageRoot)hotchocolate.aspnetcore/13.9.0/build/HotChocolate.AspNetCore.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore/6.0.29/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore/6.0.29/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props')" />
+    <Import Project="$(NuGetPackageRoot)hotchocolate.data/13.9.0/build/HotChocolate.Data.props" Condition="Exists('$(NuGetPackageRoot)hotchocolate.data/13.9.0/build/HotChocolate.Data.props')" />
   </ImportGroup>
 </Project>

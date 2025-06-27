@@ -4,11 +4,13 @@ using Task = TaskManager.Domain.Entities.Task;
 
 namespace TaskManager.Infrastructure;
 
-public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+public class AppDbContext : DbContext
 {
     public DbSet<Task> Tasks { get; set; }
     public DbSet<User> Users { get; set; }
 
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options) { }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Task>()

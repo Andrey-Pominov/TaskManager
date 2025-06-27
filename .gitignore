@@ -1,0 +1,52 @@
+# Сборочные каталоги
+bin/
+obj/
+out/
+
+# Пользовательские файлы Visual Studio
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Файлы сборки и публикации
+*.dll
+*.exe
+*.app
+*.pdb
+*.cache
+*.zip
+*.log
+
+# Пакеты NuGet
+*.nupkg
+packages/
+*.snupkg
+
+# Конфиденциальные файлы и настройки
+*.env
+*.secret
+*.key
+
+# Папки publish
+**/publish/
+**/Release/
+
+# Конфигурации Rider/Resharper
+.idea/
+*.DotSettings.user
+
+# Кэш тестов и покрытие
+TestResults/
+*.coverage
+*.coveragexml
+
+# Кэш SDK
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+# Служебные системные файлы
+.DS_Store
+Thumbs.db
