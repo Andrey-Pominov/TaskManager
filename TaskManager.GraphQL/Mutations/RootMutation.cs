@@ -1,6 +1,3 @@
 namespace TaskManager.GraphQL.Mutations;
 
-public class RootMutation
-{
-    
-}
+public class RootMutation { }

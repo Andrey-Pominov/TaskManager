@@ -1,10 +1,9 @@
-﻿using HotChocolate.Data.Filters;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using TaskManager.Domain.Entities;
 using TaskManager.GraphQL.Mutations;
 using TaskManager.GraphQL.Queries;
 using TaskManager.GraphQL.Types;
-using Task = TaskManager.Domain.Entities.Task;
+using TaskManager.Shared.Common;
 
 namespace TaskManager.GraphQL;
 
@@ -14,16 +13,31 @@ public static class ServiceCollectionExtensions
     {
         services
             .AddGraphQLServer()
-            .AddQueryType<Query>()
+            .AddAuthorization()
+            .AddHttpRequestInterceptor<CustomRequestInterceptor>()
+            .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true)
+            .AddProjections()
+            .AddFiltering() 
+            .AddType<TaskFilterType>()
+            .AddType<UserFilterType>()
+            .AddType(new EnumType<Status>(d =>
+            {
+                d.Name("Status");
+                d.BindValuesExplicitly();
+                d.Item(Status.TODO);
+                d.Item(Status.IN_PROGRESS);
+                d.Item(Status.DONE);
+            }))
+            .AddDirectiveType<SkipDirectiveType>() 
+            .AddDirectiveType<IncludeDirectiveType>()
+            .AddQueryType<RootQuery>()
             .AddMutationType<RootMutation>()
             .AddType<EnumType<Status>>()
             .AddType<AuthMutation>()
             .AddType<TaskType>()
             .AddType<UserType>()
             .AddType<AssignTaskPayloadType>()
-            .AddType<FilterInputType<Task>>()
             .AddType<TaskMutation>()
-            .AddFiltering() 
             .AddSorting();
 
         return services;

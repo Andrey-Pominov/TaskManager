@@ -20,9 +20,11 @@ public class TaskRepository : ITaskRepository
 
     public IQueryable<UserTask> GetAllAsync()
     {
-        return _context.Tasks.AsQueryable();
+        return _context.Tasks
+            .Include(t => t.CreatedBy)
+            .Include(t => t.AssignedTo)
+            .AsQueryable();
     }
-
     public async Task<UserTask> AddAsync(UserTask task)
     {
         var newTask = _context.Tasks.Add(task);

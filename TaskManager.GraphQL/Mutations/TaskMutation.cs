@@ -1,7 +1,6 @@
 using HotChocolate.Authorization;
 using TaskManager.Application.Interface;
 using TaskManager.Domain.Entities;
-using TaskManager.Shared.Common;
 using UserTask = TaskManager.Domain.Entities.Task;
 
 namespace TaskManager.GraphQL.Mutations;
