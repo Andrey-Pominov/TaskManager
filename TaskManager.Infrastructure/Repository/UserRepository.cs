@@ -19,6 +19,11 @@ public class UserRepository : IUserRepository
         return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
     }
 
+    public async Task<User?> GetByIdAsync(Guid id)
+    {
+        return await _context.Users.FindAsync(id);
+    }
+
     public async Task<bool> ExistsByUsernameOrEmailAsync(string username, string email)
     {
         return await _context.Users.AnyAsync(u => u.Username == username || u.Email == email);
@@ -28,6 +33,10 @@ public class UserRepository : IUserRepository
     {
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
-        
+    }
+
+    public IQueryable<User> GetAll()
+    {
+        return _context.Users.AsQueryable();
     }
 }

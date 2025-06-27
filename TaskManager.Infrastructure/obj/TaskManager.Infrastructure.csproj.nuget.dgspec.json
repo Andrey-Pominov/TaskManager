@@ -166,7 +166,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -181,7 +185,7 @@
           "dependencies": {
             "HotChocolate.AspNetCore": {
               "target": "Package",
-              "version": "[13.8.1, )"
+              "version": "[13.9.0, )"
             }
           },
           "imports": [

@@ -50,19 +50,19 @@
           "dependencies": {
             "HotChocolate.AspNetCore": {
               "target": "Package",
-              "version": "[13.8.1, )"
+              "version": "[13.9.0, )"
             },
             "HotChocolate.AspNetCore.Authorization": {
               "target": "Package",
-              "version": "[13.8.1, )"
+              "version": "[13.9.0, )"
             },
             "HotChocolate.Authorization": {
               "target": "Package",
-              "version": "[13.8.1, )"
+              "version": "[13.9.0, )"
             },
             "HotChocolate.Data": {
               "target": "Package",
-              "version": "[13.8.1, )"
+              "version": "[13.9.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -274,15 +274,15 @@
           "dependencies": {
             "HotChocolate.AspNetCore": {
               "target": "Package",
-              "version": "[13.8.1, )"
+              "version": "[13.9.0, )"
             },
             "HotChocolate.AspNetCore.Authorization": {
               "target": "Package",
-              "version": "[13.8.1, )"
+              "version": "[13.9.0, )"
             },
             "HotChocolate.Data": {
               "target": "Package",
-              "version": "[13.8.1, )"
+              "version": "[13.9.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -418,7 +418,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj": {
+                "projectPath": "/Users/andreypominov/Documents/GitHub/TaskManager/TaskManager.Domain/TaskManager.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -433,7 +437,7 @@
           "dependencies": {
             "HotChocolate.AspNetCore": {
               "target": "Package",
-              "version": "[13.8.1, )"
+              "version": "[13.9.0, )"
             }
           },
           "imports": [

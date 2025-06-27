@@ -2,13 +2,13 @@ using Task = TaskManager.Domain.Entities.Task;
 
 namespace TaskManager.GraphQL.Types;
 
-public class TaskType :  ObjectType<Task>
+public class TaskType : ObjectType<Task>
 {
     protected override void Configure(IObjectTypeDescriptor<Task> descriptor)
     {
         descriptor
             .Field(t => t.Id)
-            .Type<NonNullType>();
+            .Type<NonNullType<IdType>>(); 
 
         descriptor
             .Field(t => t.Title)
@@ -29,6 +29,11 @@ public class TaskType :  ObjectType<Task>
         descriptor
             .Field(t => t.CreatedBy)
             .Type<UserType>()
-            .Authorize("Admin"); 
+            .Authorize("Admin");
+
+        descriptor
+            .Field(t => t.AssignedTo)
+            .Type<UserType>();
     }
+
 }
