@@ -17,7 +17,7 @@ public class UserService : IUserService
     public async Task<Result<IQueryable<User>>> GetAllUserAsync(Guid userId)
     {
         var user = await _userRepository.GetByIdAsync(userId);
-        if (user == null || user.Role != Role.Admin)
+        if (user is not { Role: Role.Admin })
         {
             return Result<IQueryable<User>>.Failure("You are not allowed to get all users");
         }
