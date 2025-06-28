@@ -67,6 +67,7 @@ TaskManager is a web application for managing tasks, built with ASP.NET Core and
 6. **Access the GraphQL endpoint:**
     - The default endpoint is usually at `https://localhost:<port>/graphql`.
     - You can test queries using Banana Cake Pop, Postman, or any GraphQL client.
+    - [Postman api for tests](https://growthvision.postman.co/workspace/Personal_Tracker~85cb1ffb-f89d-42c8-9a04-a136c9603dfd/collection/21536087-20e124f0-a333-4d88-801c-cea3694fabee?action=share&creator=21536087&active-environment=21536087-dd0ced44-41f7-4183-9c72-3c81b2520dee)
 
 ## GraphQL Highlights
 
