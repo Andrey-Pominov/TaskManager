@@ -10,6 +10,7 @@ out/
 *.userosscache
 *.sln.docstates
 
+
 # Файлы сборки и публикации
 *.dll
 *.exe
