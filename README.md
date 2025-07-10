@@ -79,6 +79,12 @@ TaskManager is a web application for managing tasks, built with ASP.NET Core and
 
 You can extend the API by adding new queries, mutations, types, or directives within the `TaskManager.GraphQl` project. Register additional services or middleware in the API project's startup configuration.
 
+
+## RabbitMQ 
+if you wanna use it broker need create image on docker 
+   ```sh
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-management
+   ```
 ## Contributing
 
 1. Fork the repository.

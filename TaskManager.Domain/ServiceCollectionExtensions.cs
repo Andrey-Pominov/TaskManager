@@ -1,6 +1,3 @@
 ﻿namespace TaskManager.Domain;
 
-public class ServiceCollectionExtensions
-{
-
-}
+public class ServiceCollectionExtensions { }

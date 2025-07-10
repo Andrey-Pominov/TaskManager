@@ -2,6 +2,8 @@ using HotChocolate.Authorization;
 using Microsoft.Extensions.Logging;
 using TaskManager.Application.Interface;
 using TaskManager.Domain.Entities;
+using TaskManager.Infrastructure.MessageBroker.Interface;
+using TaskManager.Shared.Common;
 using UserTask = TaskManager.Domain.Entities.Task;
 
 namespace TaskManager.GraphQL.Mutations;
@@ -113,27 +115,40 @@ public class TaskMutation
     [Authorize(Roles = new[] { "Admin" })]
     public async Task<UserTask> AssignTaskToUser(
         [Service] ITaskService taskService,
+        [Service] IMessagePublisher messagePublisher,
         Guid taskId,
         Guid assignUserId)
     {
         _logger.LogInformation("Assigning task taskId: {TaskId} to userId: {AssignUserId}", taskId, assignUserId);
+
         try
         {
             var result = await taskService.AssignTaskToUserAsync(taskId, assignUserId);
+
             if (!result.IsSuccess)
             {
-                _logger.LogWarning("Task assignment failed for taskId: {TaskId}, assignUserId: {AssignUserId}. Error: {Error}", 
+                _logger.LogWarning("Task assignment failed for taskId: {TaskId}, assignUserId: {AssignUserId}. Error: {Error}",
                     taskId, assignUserId, result.Error);
                 throw new GraphQLException(result.Error);
             }
 
-            _logger.LogInformation("Task assigned successfully for taskId: {TaskId}, assignUserId: {AssignUserId}", 
-                taskId, assignUserId);
-            return result.Value;
+            var task = result.Value;
+            var eventMessage = new TaskAssignedEvent
+            {
+                TaskId = task.Id,
+                AssigneeUserId = task.AssignedTo.Id,
+                AssigneeEmail = task.AssignedTo.Email,
+                TaskTitle = task.Title
+            };
+
+            await messagePublisher.PublishAsync("task.exchange", "task.assigned", eventMessage);
+
+            _logger.LogInformation("Task assigned and event published: {TaskId}", task.Id);
+            return task;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Unexpected error during task assignment for taskId: {TaskId}, assignUserId: {AssignUserId}", 
+            _logger.LogError(ex, "Unexpected error during task assignment for taskId: {TaskId}, assignUserId: {AssignUserId}",
                 taskId, assignUserId);
             throw;
         }
