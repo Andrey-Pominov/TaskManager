@@ -3,6 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TaskManager.Infrastructure.Auth;
 using TaskManager.Infrastructure.Interfaces;
+using TaskManager.Infrastructure.MessageBroker.Interface;
+using TaskManager.Infrastructure.MessageBroker.Messages;
 using TaskManager.Infrastructure.Repository;
 using TaskManager.Shared.Configuration;
 
@@ -18,6 +20,10 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<ITaskRepository, TaskRepository>();
+        services.AddSingleton<IMessagePublisher, RabbitMqPublisher>();
+        services.AddSingleton<IEmailSender, EmailSender>();
+        services.AddHostedService<TaskAssignedConsumer>();
+
         var jwtSettings = config.GetSection("JwtSettings").Get<JwtSettings>();
         services.AddSingleton(jwtSettings);
 
